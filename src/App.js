@@ -1,9 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
-import {testGet} from "./testConnection.js";
-let resp = testGet();
+// import {testGet} from "./testConnection.js";
+import axios from "axios";
+import React from 'react';
 
 function App() {
+  // let resp;
+  const [resp, setResp] = React.useState(null);
+
+  React.useEffect(() => {
+    axios.get('http://localhost:8080/ping').then(r =>{
+      setResp(r.data);
+      console.log(r.data)
+    })
+  }, [])
+  console.log("app.js: ",resp);
+
   return (
     <div className="App">
       <header className="App-header">
