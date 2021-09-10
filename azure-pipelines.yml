@@ -8,6 +8,12 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+  
+variables:
+  directory: react-azure-demo
+  stage: development
+  serviceConnection: REACT_AZURE_DEMO
+  appServiceName: reactazuredemo
 
 steps:
 - task: NodeTool@0
