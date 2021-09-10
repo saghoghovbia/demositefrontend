@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'ubuntu-latest'
 
 # Set variables
 variables:
@@ -25,17 +25,17 @@ steps:
 - script: 
     npm install
   displayName: 'npm install'
-  # workingDirectory: $(directory)
+  workingDirectory: $(directory)
  
 - script: 
     npm run build
   displayName: 'npm build'
-  # workingDirectory: $(directory)
+  workingDirectory: $(directory)
  
 - task: CopyFiles@2
   displayName: 'Copy files'
   inputs:
-    sourceFolder: 'build' 
+    sourceFolder: '$(directory)/build' 
     Contents: '**/*'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     cleanTargetFolder: true
