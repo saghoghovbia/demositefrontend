@@ -7,14 +7,15 @@ trigger:
 - main
 
 pool:
-  vmImage: windows-latest
-  
+  vmImage: 'windows-latest'
+
+# Set variables
 variables:
   directory: react-azure-demo
   stage: development
   serviceConnection: REACT_AZURE_DEMO
   appServiceName: reactazuredemo
-
+ 
 steps:
 - task: NodeTool@0
   inputs:
@@ -52,3 +53,4 @@ steps:
   displayName: 'Publish Build Artifacts'
   inputs: 
     pathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+ 
