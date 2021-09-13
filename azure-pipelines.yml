@@ -34,5 +34,3 @@ steps:
   inputs:
     targetPath: $(System.DefaultWorkingDirectory)/build
     artifact: 'drop'
-    publishLocation: 'pipeline'
-- task: PublishBuildArtifacts@1
