@@ -115,7 +115,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 src/.DS_Store
-
-# ignore .idea, .vscode, and node_modules folders
+ 
+#ignoring unnecessary stuff from idea
 .idea/
 .vscode/
+.node_modules/
